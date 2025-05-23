@@ -400,7 +400,7 @@ button.btn-option:hover {
   .settings__options--color input[type="radio"] + label {
     opacity: 1; }
     .settings__options--color input[type="radio"] + label.color-peach {
-      background-color: #f87272; }
+      background-color: #fad7d7; }
     .settings__options--color input[type="radio"] + label.color-aqua {
       background-color: #72f4f8; }
     .settings__options--color input[type="radio"] + label.color-orchid {
