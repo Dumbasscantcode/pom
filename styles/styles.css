@@ -62,7 +62,7 @@ html {
 body {
   box-sizing: border-box;
   min-height: 100vh;
-  background-color: #1e213e;
+  background-color: #faf7fa;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -102,7 +102,7 @@ body {
 
 button,
 .btn {
-  background-color: #f87272;
+  background-color: #ffdbdb;
   color: white;
   font-size: 1.6rem;
   line-height: 2rem;
@@ -309,7 +309,7 @@ button.btn-option:hover {
         font-weight: 400;
         line-height: 1.7rem;
         font-weight: 300;
-        color: #161932;
+        color: #faf0f9;
         font-size: 1.3rem;
         text-align: left; }
       .settings__card--content > section:not(:last-child) {
@@ -699,14 +699,14 @@ main .accent,
 footer .slider__input[type="radio"]:checked + .slider__label,
 footer .accent {
   transition: color 0.1s, border-color 0.1s, background-color 0.1s; }
-  .theme-peach header .slider__input[type="radio"]:checked + .slider__label, .theme-peach
-  header .accent, .theme-peach
-  main .slider__input[type="radio"]:checked + .slider__label, .theme-peach
-  main .accent, .theme-peach
-  footer .slider__input[type="radio"]:checked + .slider__label, .theme-peach
+  .theme-pink header .slider__input[type="radio"]:checked + .slider__label, .theme-pink
+  header .accent, .theme-pink
+  main .slider__input[type="radio"]:checked + .slider__label, .theme-pink
+  main .accent, .theme-pink
+  footer .slider__input[type="radio"]:checked + .slider__label, .theme-pink
   footer .accent {
-    stroke: #f87272;
-    background-color: #f87272; }
+    stroke: #f7cdcd;
+    background-color: #fad7d7; }
   .theme-aqua header .slider__input[type="radio"]:checked + .slider__label, .theme-aqua
   header .accent, .theme-aqua
   main .slider__input[type="radio"]:checked + .slider__label, .theme-aqua
