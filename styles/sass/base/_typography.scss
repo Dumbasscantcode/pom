@@ -1,0 +1,113 @@
+body {
+  font-family: $font-family-kumbh-sans;
+  font-size: $font-size-default;
+  font-weight: $font-weight-body;
+  color: $transparent-blue;
+  text-align: center;
+}
+
+@mixin logo-display-text {
+  font-size: 3.2rem;
+  font-weight: $font-weight-display;
+  line-height: 4rem;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+@mixin logo-display-text-mobile {
+  @include logo-display-text;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+@mixin heading-extra-large {
+  font-size: 10rem;
+  font-weight: $font-weight-display;
+  line-height: 12.4rem;
+  letter-spacing: -.5rem;
+  text-align: center;
+}
+
+@mixin heading-extra-large-mobile {
+  @include heading-extra-large;
+  font-size: 8rem;
+  line-height: 9.9rem;
+  letter-spacing: -.4rem;
+
+}
+
+@mixin heading-large {
+  font-size: 2.8rem;
+  font-weight: $font-weight-display;
+  line-height: 3.4rem;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+@mixin heading-large-mobile {
+  @include heading-large;
+  font-size: 2.4rem;
+  line-height: 3rem;
+}
+
+@mixin heading-medium {
+  font-weight: $font-weight-display;
+}
+
+@mixin heading-medium-mobile {
+  @include heading-medium;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+@mixin heading-small {
+  // font-size: 1.6rem;
+  font-weight: $font-weight-display;
+  // line-height: 2rem;
+  // letter-spacing: 1.5rem;
+  // text-align: left;
+  text-transform: uppercase;
+}
+
+@mixin heading-small-mobile {
+  @include heading-small;
+  font-size: 1.4rem;
+  line-height: 1.73rem;
+  letter-spacing: 1.3rem;
+}
+
+@mixin heading-extra-small {
+  // font-size: 1.6rem;
+  font-weight: $font-weight-display;
+  // line-height: 2rem;
+  // letter-spacing: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@mixin heading-extra-small-mobile {
+  @include heading-extra-small;
+  font-size: 1.1rem;
+  line-height: 1.36rem;
+  letter-spacing: .42rem;
+}
+
+@mixin body-text-primary {
+  font-size: 1.4rem;
+  font-weight: $font-weight-body;
+  line-height: 1.7rem;
+}
+
+@mixin body-text-primary-mobile {
+  @include body-text-primary;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+@mixin body-text-secondary {
+  @include body-text-primary;
+  font-weight: 300;
+  color: $dark-knight;
+  font-size: 1.3rem;
+  text-align: left;
+}

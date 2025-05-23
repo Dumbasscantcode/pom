@@ -1,0 +1,89 @@
+.slider {
+  position: relative;
+  @include flex(row, space-evenly, center);
+  width: 32.7rem;
+  height: 6.3rem;
+  background: $dark-knight;
+  border-radius: $border-radius-default;
+  padding: .8rem .6rem;
+  margin-bottom: $padding-default-mobile;
+
+  &__container {
+    z-index: 2;
+    @include flex(row, space-around, center);
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: $border-radius-default;
+  }
+
+  &__input[type="radio"] {
+
+    /* Hide default radio button */
+    &:not(:checked),
+    &:checked {
+      display: none;
+    }
+  }
+
+  &__label {
+    width: 10.5rem;
+    height: 4.8rem;
+    border-radius: $border-radius-toggle;
+    @include flex(row, center, center);
+    transition: color 200ms ease-out;
+    z-index: 4;
+    @include body-text-primary-mobile;
+    font-weight: $font-weight-display;
+  }
+
+  &__input[type="radio"]:checked+&__label {
+    opacity: 1;
+    color: $dark-knight;
+    z-index: 5;
+    transition: transform 600ms cubic-bezier(.02, .94, .09, .97),
+      background-color 300ms cubic-bezier(.17, .67, .14, 1.03);
+  }
+
+  &__input[type="radio"]:not(:checked)+&__label {
+    opacity: .6;
+    color: rgba($baby-powder, .6);
+    background-color: transparent;
+  }
+
+  &__input[value="pomodoro-option"]:checked~&__indicator {
+    transform: translateX(0);
+  }
+
+  &__input[value="short-break-option"]:checked~&__indicator {
+    transform: translateX(100%);
+  }
+
+  &__input[value="long-break-option"]:checked~&__indicator {
+    transform: translateX(200%);
+  }
+
+
+  &__indicator {
+    position: absolute;
+    @include flex(row, center, center);
+    z-index: 3;
+    width: 33%;
+    transition: left 0.1s ease-out;
+    height: 5.3rem;
+    top: 1rem;
+    left: 0;
+    border-radius: $border-radius-default;
+  }
+
+  @include responsive-for(tablet) {
+    width: 37.3rem;
+    margin-bottom: 5.5rem;
+
+    &__label {
+      width: 12rem;
+      @include body-text-primary;
+      font-weight: $font-weight-display;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.header {
+    margin: 3.2rem auto 3.9rem;
+    @include flex(column, space-evenly, center);
+
+    &__logo {
+        @include logo-display-text-mobile;
+    }
+
+    @include responsive-for(tablet) {
+        margin: 8rem auto 5.5rem;
+
+        &__logo {
+            @include logo-display-text;
+        }
+
+    }
+}

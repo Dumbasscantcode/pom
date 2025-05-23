@@ -1,0 +1,84 @@
+.container {
+    // height: 100%;
+    // padding: 2rem;
+    @include flex(column, space-between, center);
+    // @include body-text-primary;
+}
+
+.info {
+    &__title {
+    // @include heading-primary;
+        font-size: 1.75rem;
+    }
+
+    &__icon {
+        :hover {}
+
+    }
+
+    &__details {
+        @include flex(column, center, center);
+        height: 0;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba($black-market, .9);
+
+        opacity: 0;
+        visibility: hidden;
+    
+        z-index: 2;
+
+        &:target {
+            height: 100vh;
+            width: 100%;
+            opacity: 1;
+        
+            visibility: visible;
+        }
+
+    }
+
+    &__content {
+        @include flex(column, center, center);
+        // position: relative;
+        // top: 0;
+        height: 0;
+        width: 0;
+
+        background-color: $distant-horizon;
+        color: $black-market;
+        padding: 3rem 2rem 3rem 3rem;
+        opacity: 0;
+        visibility: hidden;
+        // transform: translate(-50%, -50%) scale(.25);
+        transition: all .4s .2s; // background .2s delay => then popup
+
+
+        &:target {
+            opacity: 1;
+            width: 32.7rem;
+            height: 100%;
+            // transform: translate(-50%, -50%) scale(1);
+
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        hr {
+            border: 1px solid $georgia-peach;
+            margin: 2rem auto;
+        }
+
+        ul li {
+            color: $black-market;
+            margin-left: .75rem;
+            margin-bottom: .75rem;
+            font-size: 1.25rem;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    /* set 1rem to 10px */
+}
+
+body {
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: $black-market;
+    @include flex(column, flex-start, center);
+}
+
+
+.mobile-only {
+    display: contents;
+}
+
+.desktop-only {
+    display: none;
+}
+
+input,
+label,
+a {
+    cursor: pointer;
+}
+
+.skip-to-main-content-link {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    opacity: 0;
+  }
+  .skip-to-main-content-link:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+  }

@@ -1,0 +1,59 @@
+/* Theme definitions */
+$themes: (
+    // TO-DO => adjust font-weight and letter-spacing on theme change
+    roboto: (fontFamily: $font-family-roboto-slab),
+    sans: (fontFamily:$font-family-kumbh-sans),
+    space: (fontFamily: $font-family-space-mono),
+    peach: (accentColor: $georgia-peach),
+    aqua: (accentColor: $robins-egg-blue),
+    orchid: (accentColor: $electric-orchid),
+);
+
+/* Implementation of themes */
+@mixin themify($themes) {
+
+    @each $theme,
+    $map in $themes {
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+
+            @each $key,
+            $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
+
+
+header,
+main,
+footer {
+
+    @include themify($themes) {
+        font-family: themed('fontFamily');
+
+    }
+
+
+
+    .slider__input[type="radio"]:checked+.slider__label,
+    .accent {
+
+        transition: color 0.1s, border-color 0.1s, background-color 0.1s;
+
+        @include themify($themes) {
+            stroke: themed('accentColor');
+            background-color: themed('accentColor');
+
+        }
+    }
+}
